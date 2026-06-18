@@ -12,6 +12,6 @@ app.get("/", (req, res) => {
 app.use("/api/auth",authRouter)
 app.use("/api/players", playerRouter)
 
-app.listen(3000, () => {
-    console.log("Server Started On Port 3000")
+app.listen(5000, () => {
+    console.log("Server Started On Port 5000")
 })

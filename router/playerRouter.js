@@ -8,16 +8,19 @@ const {
     deletePlayer
 } = require("../controller/playerController")
 
+const auth = require("../middleware/authMiddleware")
+
 const router = express.Router()
 
-router.post("/create", createPlayer)
+router.post("/create",createPlayer)
 
-router.get("/all", getPlayers)
+// Protected Route
+router.get("/all",auth,getPlayers)
 
-router.get("/:id", getPlayerById)
+router.get("/:id",auth,getPlayerById)
 
-router.put("/:id", updatePlayer)
+router.put("/:id",auth,updatePlayer)
 
-router.delete("/:id", deletePlayer)
+router.delete("/:id",deletePlayer)
 
 module.exports = router
